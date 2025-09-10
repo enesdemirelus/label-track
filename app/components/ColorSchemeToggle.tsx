@@ -18,8 +18,12 @@ export function ColorSchemeToggle() {
       onClick={() =>
         setColorScheme(computedColorScheme === "dark" ? "light" : "dark")
       }
+      radius="50%"
       variant="default"
       size="sm"
+      w={30}
+      h={30}
+      p={0}
       aria-label="Toggle color scheme"
     >
       {computedColorScheme === "dark" ? (
