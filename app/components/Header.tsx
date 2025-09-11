@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Text, Avatar, useMantineColorScheme } from "@mantine/core";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { UserButton } from "@clerk/nextjs";
@@ -8,7 +8,29 @@ import Link from "next/link";
 
 function Header() {
   const { colorScheme } = useMantineColorScheme();
+  const [mounted, setMounted] = useState(false);
   const isDark = colorScheme === "dark";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <header className="flex p-2 justify-between bg-white border-b border-gray-200 shadow-sm">
+        <div className="flex items-center gap-1 px-2 py-1 border border-gray-300 rounded-lg shadow-sm bg-white">
+          <Avatar src="https://github.com/shadcn.png" size={30} />
+          <Text fw={700} size="lg" c="black">
+            Label Track
+          </Text>
+        </div>
+        <div className="flex items-center gap-1 px-2 py-1 border border-gray-300 rounded-lg shadow-sm bg-white">
+          <ColorSchemeToggle />
+          <UserButton />
+        </div>
+      </header>
+    );
+  }
 
   return (
     <>
