@@ -19,7 +19,7 @@ function Header() {
     return (
       <header className="flex p-2 justify-between bg-white border-b border-gray-200 shadow-sm">
         <div className="flex items-center gap-1 px-2 py-1 border border-gray-300 rounded-lg shadow-sm bg-white">
-          <Avatar src="https://github.com/shadcn.png" size={30} />
+          <Avatar src="/favicon.ico" size={30} />
           <Text fw={700} size="lg" c="black">
             Label Track
           </Text>
@@ -47,7 +47,7 @@ function Header() {
                 : "border-gray-300 bg-white"
             }`}
           >
-            <Avatar src="https://github.com/shadcn.png" size={30} />
+            <Avatar src="/favicon.ico" size={30} />
             <Text fw={700} size="lg" c={isDark ? "white" : "black"}>
               Label Track
             </Text>
